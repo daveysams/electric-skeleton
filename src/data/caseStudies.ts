@@ -10,6 +10,8 @@ import impact2 from "@/assets/impact-2.png";
 import impact3 from "@/assets/impact-3.png";
 import impact4 from "@/assets/impact-4.png";
 import impact5 from "@/assets/impact-5.png";
+import lemac4 from "@/assets/lemac-4.jpg";
+import lemac1 from "@/assets/lemac-1.jpg";
 import lemac2 from "@/assets/lemac-2.png";
 import lemac3 from "@/assets/lemac-3.png";
 
@@ -81,6 +83,6 @@ export const caseStudies: CaseStudy[] = [
     outcome: "The charts and documents remain in regular use today, across three sites in different states — a sign that the work has held up and continues to serve its purpose.",
     keyTakeaway: "The best outcomes come from designers who ask the right questions before they open a file.",
     imageCount: 4,
-    galleryImages: [null, null, lemac3, lemac2],
+    galleryImages: [lemac1, lemac3, lemac4, lemac2],
   },
 ];
