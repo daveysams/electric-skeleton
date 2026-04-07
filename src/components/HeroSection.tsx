@@ -36,7 +36,7 @@ const HeroSection = () => {
             I build visuals across graphic design, video production, and animation that are accessible, considered, refined.
           </p>
           <motion.a
-            href="#contact"
+            href="mailto:daveysams@gmail.com"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-2 px-8 py-4 border border-primary text-primary font-body text-sm uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-colors duration-300 rounded-sm mt-2"

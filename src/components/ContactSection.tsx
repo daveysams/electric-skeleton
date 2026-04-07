@@ -21,7 +21,7 @@ const ContactSection = () => {
           </p>
 
           <motion.a
-            href="mailto:hello@example.com"
+            href="mailto:daveysams@gmail.com"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-2 px-8 py-4 border border-primary text-primary font-body text-sm uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-colors duration-300 rounded-sm"
