@@ -1,4 +1,4 @@
-import project1 from "@/assets/project-1.jpg";
+import project1 from "@/assets/hero-impact-2.png";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.png";
 import batcher1 from "@/assets/batcher-1.jpg";
@@ -6,6 +6,12 @@ import batcher2 from "@/assets/batcher-2.jpg";
 import batcher3 from "@/assets/batcher-3.jpg";
 import batcher4 from "@/assets/batcher-4.jpg";
 import impact1 from "@/assets/impact-1.png";
+import impact2 from "@/assets/impact-2.png";
+import impact3 from "@/assets/impact-3.png";
+import impact4 from "@/assets/impact-4.png";
+import impact5 from "@/assets/impact-5.png";
+import lemac2 from "@/assets/lemac-2.png";
+import lemac3 from "@/assets/lemac-3.png";
 
 export interface CaseStudy {
   slug: string;
@@ -41,7 +47,7 @@ export const caseStudies: CaseStudy[] = [
     outcome: "Since soft launching at impactchamps.net, the platform has hit the ground running. Traffic is trending upward, content is being published across articles, podcasts, and video.\n\nThere's still more to come - the community forum is not yet open - but the early signs suggest the platform is landing well with its audience.",
     keyTakeaway: "A distinctive visual language can give a community something to rally around.",
     imageCount: 4,
-    galleryImages: [impact1, null, null, null],
+    galleryImages: [impact3, impact2, impact5, impact4],
   },
   {
     slug: "day-in-the-life-concrete-batcher",
@@ -75,5 +81,6 @@ export const caseStudies: CaseStudy[] = [
     outcome: "The charts and documents remain in regular use today, across three sites in different states — a sign that the work has held up and continues to serve its purpose.",
     keyTakeaway: "The best outcomes come from designers who ask the right questions before they open a file.",
     imageCount: 4,
+    galleryImages: [null, null, lemac3, lemac2],
   },
 ];
