@@ -45,7 +45,7 @@ const CaseStudy = () => {
 
       <div className="max-w-6xl mx-auto px-8 md:px-12 pt-28 pb-6">
         <FadeIn>
-          <Link to="/#work" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+          <Link to="/#work" className="inline-flex items-center gap-2 text-sm text-foreground hover:text-primary transition-colors">
             <ArrowLeft className="w-4 h-4" />
             Back to Selected Work
           </Link>
@@ -64,67 +64,115 @@ const CaseStudy = () => {
       {/* Title */}
       <section className="max-w-6xl mx-auto px-8 md:px-12 pb-6">
         <FadeIn delay={0.15}>
-          <p className="text-xs uppercase tracking-widest text-muted-foreground mb-3">{study.category}</p>
+          <p className="text-xs uppercase tracking-widest text-foreground mb-3">{study.category}</p>
           <h1 className="font-display text-4xl md:text-5xl text-foreground">{study.title}</h1>
         </FadeIn>
       </section>
 
       {/* Two-column section */}
-      <section className="max-w-6xl mx-auto px-8 md:px-12 pb-16">
-        <div className="grid gap-12 md:grid-cols-2">
-          <FadeIn delay={0.2}>
-            <div>
-              <h2 className="font-display text-xl font-bold text-foreground mb-4">The Challenge</h2>
-              <p className="font-claude-response-body break-words whitespace-pre-line leading-[1.7] py-0">{study.challenge}</p>
-
-              <h2 className="font-display text-xl font-bold text-foreground mt-8 mb-4">Approach & Design</h2>
-              <p className="text-foreground whitespace-pre-line">{study.approach}</p>
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={0.3}>
-            <div>
-              <h2 className="font-display text-xl font-bold text-foreground mb-6 md:text-center">
-                Project Overview
-              </h2>
-              <div className="space-y-4 md:text-center">
-                <div>
-                  <p className="text-sm font-semibold text-foreground"><span className="italic text-left">Client</span></p>
-                  <p className="text-foreground text-center">{study.client}</p>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-foreground"><span className="italic">Brief:</span></p>
-                  <p className="font-body text-foreground text-left">{study.persona}</p>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-foreground"><span className="italic">Tools:</span></p>
-                  <div className="mt-1 flex flex-wrap gap-2 md:justify-center">
-                    {study.tags.map((tag, index) => (
-                      <span key={`${tag}-${index}`} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-foreground"><span className="italic">Outcome:</span></p>
-                  <p className="text-foreground text-left whitespace-pre-line">{study.outcome}</p>
+      {/* Two-column: narrative left, project overview right */}
+      <div className="px-6 md:px-12 max-w-6xl mx-auto mb-24">
+        <div className="flex flex-col-reverse lg:grid lg:grid-cols-12 gap-16 lg:gap-20">
+          {/* Left column — narrative */}
+          <div className="lg:col-span-7 space-y-12">
+            <FadeIn delay={0.3}>
+              <div>
+                <h2 className="font-display text-2xl md:text-3xl text-foreground mb-5">
+                  The Challenge
+                </h2>
+                <div className="space-y-4 text-foreground/80 leading-relaxed">
+                  {study.challenge.split("\n\n").map((p, i) => (
+                    <p key={i}>{p}</p>
+                  ))}
                 </div>
               </div>
-            </div>
-          </FadeIn>
+            </FadeIn>
+
+            <div className="w-16 border-t border-primary" />
+
+            <FadeIn delay={0.4}>
+              <div>
+                <h2 className="font-display text-2xl md:text-3xl text-foreground mb-5">
+                  Approach &amp; Design
+                </h2>
+                <div className="space-y-4 text-foreground/80 leading-relaxed">
+                  {study.approach.split("\n\n").map((p, i) => (
+                    <p key={i}>{p}</p>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+
+          {/* Right column — project overview */}
+          <aside className="lg:col-span-5">
+            <FadeIn delay={0.3}>
+              <div className="bg-card rounded-xl p-8 md:p-10 sticky top-24  border-r-4 border-primary">
+                <h2 className="font-display text-2xl md:text-3xl text-foreground mb-8">
+                  Project Overview
+                </h2>
+
+                <dl className="space-y-6">
+                  <div>
+                    <dt className="text-sm uppercase tracking-wider text-foreground font-display font-semibold italic mb-1">
+                      Client
+                    </dt>
+                    <dd className="text-foreground text-lg">{study.client}</dd>
+                  </div>
+
+                  <div className="border-t border-primary pt-6">
+                    <dt className="text-sm uppercase tracking-wider text-foreground font-display font-semibold italic mb-1">
+                      Brief
+                    </dt>
+                    <dd className="text-foreground/80 leading-relaxed">
+                      {study.persona}
+                    </dd>
+                  </div>
+
+                  <div className="border-t border-primary pt-6">
+                    <dt className="text-sm uppercase tracking-wider text-foreground font-display font-semibold italic mb-1">
+                      Tools
+                    </dt>
+                    <dd className="flex flex-wrap gap-2 mt-2">
+                      {study.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-3 py-1 rounded-full text-sm bg-secondary text-foreground"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </dd>
+                  </div>
+
+                  <div className="border-t border-primary pt-6">
+                    <dt className="text-sm uppercase tracking-wider text-foreground font-display font-semibold italic mb-1">
+                      Outcome
+                    </dt>
+                    <dd className="text-foreground/80 leading-relaxed space-y-3">
+                      {study.outcome.split("\n\n").map((p, i) => (
+                        <p key={i}>{p}</p>
+                      ))}
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </FadeIn>
+          </aside>
         </div>
-      </section>
+      </div>
 
       {/* Key Takeaway */}
-      <section className="max-w-6xl mx-auto px-8 md:px-12 pb-12">
-        <FadeIn delay={0.35}>
-          <div className="rounded-lg border-l-4 border-primary bg-primary/10 p-6">
-            <p className="text-xs font-bold uppercase tracking-widest text-primary">Key Takeaway</p>
-            <p className="mt-2 font-display text-lg font-bold text-foreground">{study.keyTakeaway}</p>
+      <div className="px-6 md:px-12 max-w-6xl mx-auto mb-24">
+        <FadeIn delay={0.5}>
+          <div className="bg-card rounded-xl p-8 md:p-12 border-l-4 border-primary">
+            <p className="text-primary font-medium mb-3">Key Takeaway</p>
+            <p className="font-display text-xl md:text-2xl text-foreground leading-relaxed">
+              {study.keyTakeaway}
+            </p>
           </div>
         </FadeIn>
-      </section>
+      </div>
 
       {/* Image gallery placeholders */}
       <section className="max-w-6xl mx-auto px-8 md:px-12 pb-20">
@@ -142,7 +190,7 @@ const CaseStudy = () => {
                   {galleryImg ? (
                     <img src={galleryImg} alt={`${study.title} – image ${i + 1}`} className="w-full h-full object-cover" />
                   ) : (
-                    <p className="text-sm text-muted-foreground">Project image {i + 1}</p>
+                    <p className="text-sm text-foreground">Project image {i + 1}</p>
                   )}
                 </div>
               );
@@ -152,7 +200,7 @@ const CaseStudy = () => {
       </section>
 
       {/* Footer */}
-      <footer className="px-8 py-8 text-center text-xs text-muted-foreground tracking-wider border-t border-border">
+      <footer className="px-8 py-8 text-center text-xs text-foreground tracking-wider border-t border-border">
         © {new Date().getFullYear()} - Davey Sams • Designer
       </footer>
     </div>
