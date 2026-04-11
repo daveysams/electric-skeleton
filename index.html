@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- TODO: Set the document title to the name of your application -->
     <title>Davey Sams | Electric Skeleton</title>
     <meta name="description" content="Portfolio of Davey Sams, Designer" />
     <meta name="author" content="Davey Sams" />
@@ -11,13 +10,18 @@
     <meta property="og:title" content="Davey Sams | Electric Skeleton" />
     <meta property="og:description" content="Portfolio of Davey Sams, Designer" />
     <meta property="og:type" content="website" />
-    <!-- <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" /> -->
-
-    <!-- <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Lovable" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" /> -->
   </head>
 
+  <!-- Google tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VFN5TLNY79"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-VFN5TLNY79');
+  </script>
+  
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
