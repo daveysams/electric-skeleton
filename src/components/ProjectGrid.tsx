@@ -6,15 +6,44 @@ const ProjectGrid = () => {
   return (
     <section id="work" className="px-8 md:px-12 py-24 md:py-32">
       <div className="max-w-6xl mx-auto">
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+        <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        // className="mb-16"
+        className="space-y-6"
+      >
+        <h2 className="text-4xl md:text-5xl leading-tight text-foreground">
+          Selected <span className="italic text-gradient-gold">Work</span>
+        </h2>
+        <p className="mb-16 font-body leading-relaxed text-foreground">
+          Design, motion, and the spaces where they overlap.
+        </p>
+        <p></p>
+        </motion.div>
+
+          <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-sm uppercase tracking-[0.3em] mb-6 text-foreground"
+          transition={{ duration: 0.6 }}
+          className="mb-16"
         >
-          Selected Work
-        </motion.p>
-        <p className="text-foreground font-body mb-16 font-normal">Design, motion, and the spaces where they overlap.</p>
+          <div className="rounded-lg overflow-hidden bg-card" style={{ padding: "56.25% 0 0 0", position: "relative" }}>
+            <iframe
+              src="https://player.vimeo.com/video/1208044877?badge=0&autopause=0&player_id=0&app_id=58479"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+              title="Showreel 2026"
+            />
+          </div>
+          <h3 className="font-display text-2xl md:text-3xl text-foreground mt-6 text-center">
+            Showreel
+          </h3>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
           {caseStudies.map((project, i) => (
